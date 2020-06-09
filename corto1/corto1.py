@@ -16,14 +16,13 @@ def coll(numero):                       #FUNCION PARA EL ALGORITMO
 
 
 def fileWrite(fileName = 'collatz.txt'):
-    archivo = open(fileName,'w') 
-    archivo.write('Sobreescribiendo archivo...\n')
-    print('Espere, sobreescribiendo el archivo...')
-    for x in range (2 , 883):              
+    archivo = open(fileName,'w')                            #SE ABRE EL ARCHIVO
+    archivo.write('Sobreescribiendo archivo...\n')          #SE ESCRIBE EN EL ARCHIVO
+    print('Espere, sobreescribiendo el archivo...')         
+    for x in range (2 , 883):                               #SE RECORRE DE 2 A 882 (883 - 1)
         print(coll(x))
-        archivo.write(str(coll(x)))
+        archivo.write(str(coll(x)))                         #SE LLAMA LA FUNCION COLL
         archivo.write('\n')
     archivo.close() #Siempre cerrar el archivo al finalizar la escritura
     print('Append finalizado')
-
 fileWrite()
